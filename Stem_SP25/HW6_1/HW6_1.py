@@ -2,24 +2,25 @@
 from ResistorNetwork import ResistorNetwork, ResistorNetwork_2
 #endregion
 
-# region Function Definitions
 def main():
-    """
-    This program solves for the unknown currents in the circuit of the homework assignment.
-    :return: nothing
-    """
     print("Network 1:")
-    Net= # JES MISSING CODE  #Instantiate a ResistorNetwork object
-    Net. # JES MISSING CODE #call the function from Net that builds the resistor network from a text file
-    IVals=Net.AnalyzeCircuit()
+    Net = ResistorNetwork()
+    Net.BuildNetworkFromFile("ResistorNetwork.txt")
+    try:
+        IVals = Net.AnalyzeCircuit()
+        print("Network 1 currents:", IVals)
+    except Exception as e:
+        print(f"Error in Network 1: {e}")
 
     print("\nNetwork 2:")
-    Net_2 = # JES MISSING CODE  #Instantiate a ResistorNetwork_2 object
-    Net_2. # JES MISSING CODE #call the function from Net that builds the resistor network from a text file
-    IVals_2=Net_2.AnalyzeCircuit()
-# endregion
+    Net_2 = ResistorNetwork_2()
+    try:
+        Net_2.BuildNetworkFromFile("ResistorNetwork_2.txt")
+        print("Network 2 file loaded successfully")
+        IVals_2 = Net_2.AnalyzeCircuit()
+        print("Network 2 currents:", IVals_2)
+    except Exception as e:
+        print(f"Error in Network 2: {e}")
 
-# region function calls
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
-# endregion

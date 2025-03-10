@@ -1,0 +1,45 @@
+# Pipe Network
+<Pipe>
+Name = ab
+Length = 100
+Diameter = 0.1
+</Pipe>
+<Pipe>
+Name = ac
+Length = 150
+Diameter = 0.1
+</Pipe>
+<Pipe>
+Name = be
+Length = 120
+Diameter = 0.1
+</Pipe>
+<Pipe>
+Name = cd
+Length = 80
+Diameter = 0.1
+</Pipe>
+<Pipe>
+Name = de
+Length = 90
+Diameter = 0.1
+</Pipe>
+<Pipe>
+Name = dg
+Length = 110
+Diameter = 0.1
+</Pipe>
+
+<Loop>
+Name = L1
+Nodes = a, b, e, d, c
+</Loop>
+
+<Flow>
+Node = a
+Value = 0.03  # Inflow at a
+</Flow>
+<Flow>
+Node = g
+Value = -0.03  # Outflow at g
+</Flow>
